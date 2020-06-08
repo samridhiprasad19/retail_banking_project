@@ -1,8 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\application"
+    "\\application",
+    "\\application\\static",
+    "\\application\\static\\css",
+    "\\application\\static\\images",
+    "\\application\\template",
+    "\\application\\template\\includes"
   ],
-  "SelectedNode": "\\application\\__init__.py",
+  "SelectedNode": "\\application\\template\\includes\\footer.html",
   "PreviewInSolutionExplorer": false
 }
