@@ -5,9 +5,9 @@
     "\\application\\static",
     "\\application\\static\\css",
     "\\application\\static\\images",
-    "\\application\\template",
-    "\\application\\template\\includes"
+    "\\application\\templates",
+    "\\application\\templates\\includes"
   ],
-  "SelectedNode": "\\application\\template\\includes\\footer.html",
+  "SelectedNode": "\\application\\routes.py",
   "PreviewInSolutionExplorer": false
 }
