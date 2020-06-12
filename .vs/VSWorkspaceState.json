@@ -6,8 +6,11 @@
     "\\application\\static\\css",
     "\\application\\static\\images",
     "\\application\\templates",
-    "\\application\\templates\\includes"
+    "\\application\\templates\\includes",
+    "\\application\\__pycache__",
+    "\\DT20195514184",
+    "\\__pycache__"
   ],
-  "SelectedNode": "\\application\\routes.py",
+  "SelectedNode": "\\application\\templates\\enrollment.html",
   "PreviewInSolutionExplorer": false
 }
