@@ -1,5 +1,6 @@
 from application import app
-from flask import render_template,request
+from flask import render_template,request,redirect
+from application.forms import LoginForm, RegisterForm
 @app.route("/")
 @app.route("/index")
 def index():
@@ -13,9 +14,13 @@ def courses(term ='Spring 2019'): #url_variables
 @app.route("/register")
 def register():
    return render_template("register.html",register = True)
-@app.route("/login")
+@app.route("/login",methods =['GET','POST'])
 def login():
-   return render_template("login.html",login = True)
+   form = LoginForm()
+   if form.validate_on_submit():
+    flash("You are sucessfully logged in!!")
+    return redirect('/index')
+   return render_template("login.html",form = form,title = "Login",login = True)
 @app.route("/enrollment")
 def enrollment():
     id1 = request.args.get('courseID')

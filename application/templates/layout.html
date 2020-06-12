@@ -12,7 +12,10 @@
 <div class="container">
 {% include "includes/nav.html" %}
 {% block content %}
+{% with messages = get_flash_messages() %}
 
+
+{% endwith %}
 {% endblock %}
 </div>
 {% include "includes/footer.html" %}
