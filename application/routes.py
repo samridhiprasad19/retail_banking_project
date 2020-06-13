@@ -1,5 +1,5 @@
 from application import app
-from flask import render_template,request,redirect
+from flask import render_template,request,redirect,flash
 from application.forms import LoginForm, RegisterForm
 @app.route("/")
 @app.route("/index")
@@ -18,8 +18,11 @@ def register():
 def login():
    form = LoginForm()
    if form.validate_on_submit():
-    flash("You are sucessfully logged in!!")
-    return redirect('/index')
+        if request.form.get("email")=="samridhiprasad19@gmail.com":
+            flash("You are sucessfully logged in!!",'sucesss')
+            return redirect('/index')
+        else:
+            flash("Sorry!!Something went wrong!!",'danger')
    return render_template("login.html",form = form,title = "Login",login = True)
 @app.route("/enrollment")
 def enrollment():
