@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/deposit_money.css">
+</head>
+<body>
+{% include "includes/nav.html" %}
+
+<h3 align="center">Deposit Money</h3>
+
+<div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+      <div class="col-25 ">
+            <label for="cust_id">Customer Id:</label>
+      </div>
+      <div class="col-75 cls">
+
+        <input type="number" name = "cust_id" id="cust_id" required/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="acc_id">Account Id:</label>
+      </div>
+      <div class="col-75 cls">
+        <input type="number" name = "acc_id" id="acc_id" required/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="acc_type">Account Type:</label>
+      </div>
+      <div class="col-75 dropdown">
+        <select id="acc_type" name="acc_type">
+            <option value="savings">Savings</option>
+            <option value="current">Current</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="balance">Balance:</label>
+      </div>
+      <div class="col-75 cls">
+        <input type="number" name="balance" id="balance" required>
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-25">
+        <label for="deposit_money">Deposit Money:</label>
+      </div>
+      <div class="col-75 cls">
+        <input type="number" name="deposit_money" id="deposit_money" required>
+      </div>
+    </div>
+    <div class="row cls">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+</body>
+
+</html>

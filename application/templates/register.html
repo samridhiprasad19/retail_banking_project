@@ -1,21 +1,42 @@
-
     {% extends "layout.html" %}
    
     {% block content %}
-    <h2>New User Registration</h2>
+    <h1><center>{{title}}</center></h1>
 
-    <div class="container">
-        <form name="register" action="register.php" method="get">
-            <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required>
-            <br>
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-            <br>
-            <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
-            <br class="clear">
-            <input class="btn-submit" type="submit" name="submit">
-        </form>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h3></h3>
+            <form name="login" action ="" method="post">
+                {{ form.csrf_token }}
+
+                {{form.hidden_tag()}}
+                <p>{{form.customer_ssn_id.label}}<br>{{form.customer_ssn_id(size=35)}}
+                {% for error in form.customer_ssn_id.errors %}
+                    <span class = "error-message"> {{ error }} </span>{% endfor %} </p>
+                <p>{{form.password.label}}<br>{{form.password(size=35)}}
+                {% for error in form.password.errors %}
+                    <span class = "error-message"> {{ error }} </span>{% endfor %} </p>
+                
+                <p>{{form.customer_name.label}} <br>{{form.customer_name(size=60)}} 
+                {% for error in form.customer_name.errors %}
+                    <span class = "error-message"> {{ error }} </span>{% endfor %}</p>
+                <p>{{form.customer_Address.label}}<br> {{form.customer_Address()}} 
+                {% for error in form.customer_Address.errors %}
+                    <span class = "error-message"> {{ error }} </span>{% endfor %}</p>
+                <p>{{form.customer_age.label}} <br>{{form.customer_age(size=10)}} 
+                {% for error in form.customer_age.errors %}
+                    <span class = "error-message"> {{ error }} </span>{% endfor %}</p>
+                <p>{{form.customer_state.label}}<br> {{form.customer_state(size=35)}}
+                {% for error in form.customer_state.errors %}
+                    <span class = "error-message"> {{ error }} </span>{% endfor %}</p>
+                <p>{{form.customer_city.label}}<br> {{form.customer_city(size=35)}}
+                {% for error in form.customer_city.errors %}
+                    <span class = "error-message"> {{ error }} </span>
+                {% endfor %}</p>
+                <p>{{form.submit()}}</p><br><br><br>
+                
+      
+            </form>
+        </div>
     </div>
-    {% endblock %}
+ {% endblock %}

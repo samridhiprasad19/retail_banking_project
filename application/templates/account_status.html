@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Status</title>
+</head>
+<body>
+{% include "includes/nav.html" %}
+<h2 align="center">Account Status</h2>
+<table border="1" align="center" cellpadding=7 style="border-collapse: collapse; text-align: center;">
+    <tbody>
+        <tr style="font-weight: bold">
+            <td>Customer ID</td>
+            <td>Account ID</td>
+            <td>Account Type</td>
+            <td>Account Status</td>
+            <td>Message</td>
+            <td>Last Updated</td>
+            <td>Operations</td>
+        </tr>
+        <tr>
+            <td>100000268</td>
+            <td>0</td>
+            <td>Current</td>
+            <td>pending</td>
+            <td></td>
+            <td></td>
+            <td><a href="#">Refresh</a></td>
+        </tr>
+        <tr>
+            <td>100000267</td>
+            <td>111011059</td>
+            <td>Savings</td>
+            <td>Active</td>
+            <td>Lorem ipsum dolor sit amet</td>
+            <td>2020-03-01 13:44:25</td>
+            <td><a href="#">Refresh</a></td>
+        </tr>
+        <tr>
+            <td>100000266</td>
+            <td>111011150</td>
+            <td>Current</td>
+            <td>Active</td>
+            <td>Lorem ipsum dolor sit amet</td>
+            <td>2020-03-01 13:44:25</td>
+            <td><a href="#">Refresh</a></td>
+        </tr>
+        <tr>
+            <td>100000268</td>
+            <td>111011060</td>
+            <td>Savings</td>
+            <td>Active</td>
+            <td>Lorem ipsum dolor sit amet</td>
+            <td>2020-03-01 13:44:25</td>
+            <td><a href="#">Refresh</a></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<div align="center">
+    <button type="button">Refresh the list</button>
+</div>
+</body>
+</html>

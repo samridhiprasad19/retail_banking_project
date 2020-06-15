@@ -1,0 +1,24 @@
+    {% extends "layout.html" %}
+   
+    {% block content %}
+    <h6 style = "text-align:right;font-family:Times New Roman">Either one of the details should be entered</h6>
+    <h1><center>{{title}}</center></h1>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h3></h3>
+            <form name="customer_search" action ="" method="post">
+                {{ form.csrf_token }}
+
+                {{form.hidden_tag()}}
+                <p>{{form.ssn_id.label}}<br> {{form.ssn_id(size=35)}} </p><p>OR</p>
+                <p>{{form.customer_id.label}}<br> {{form.customer_id(size=60)}} </p>
+                
+
+                <p>{{form.view()}} </p>
+                
+      
+            </form>
+        </div>
+    </div>
+ {% endblock %}

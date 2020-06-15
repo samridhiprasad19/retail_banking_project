@@ -11,7 +11,7 @@ html,
 body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
-    position: relative;
+    position: absolute;
     margin:0px;
 }
 
@@ -73,7 +73,8 @@ input[type=text]:focus, input[type=password]:focus {
     margin-right: auto;
     text-align: left;
 }
-footer {
+.footer {
+    position:relative
     text-align: center;
     height: 50px;
     color: white;
@@ -98,4 +99,12 @@ footer {
 
 .error-message {
     color :red;
+}
+
+.user {
+    float: right;
+    position: absolute;
+    font-size: 25px;
+    right: 10em;
+    top: 2em;
 }

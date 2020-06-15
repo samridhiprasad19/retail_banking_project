@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="static/css/delete.css">
+</head>
+<body>
+{% include "includes/nav.html" %}
+
+<h2>Delete Account</h2>
+
+
+<form action="/action_page.php" method="post">
+
+
+  <div class="container">
+    <label for="accountid"><b>AccountId:</b></label>
+    <input type="text" placeholder="Enter accountid" name="accountid" pattern=".{10,10}" title="10 characters required"required>
+    <br> <br>
+    <label for="accountype"><b>Account Type:</b></label>
+    <input type="text" placeholder="Enter Account type" name="accountype" required>
+    <br> <br>
+    <button type="submit" class="cancelbtn">Cancel</button>
+
+  </div>
+
+
+
+</body>
+</html>
