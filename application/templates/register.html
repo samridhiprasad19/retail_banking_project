@@ -1,11 +1,10 @@
     {% extends "layout.html" %}
    
     {% block content %}
-    <h1><center>{{title}}</center></h1>
-
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h3></h3>
+            <h1><center>{{title}}</center></h1>
+            
+            <div style = "height:fit-content;">
+            <h1><center>{{title}}</center></h1>
             <form name="login" action ="" method="post">
                 {{ form.csrf_token }}
 
@@ -33,10 +32,7 @@
                 {% for error in form.customer_city.errors %}
                     <span class = "error-message"> {{ error }} </span>
                 {% endfor %}</p>
-                <p>{{form.submit()}}</p><br><br><br>
+                <p>{{form.submit()}}</p></form>
+                </div>
                 
-      
-            </form>
-        </div>
-    </div>
- {% endblock %}
+    {% endblock %}

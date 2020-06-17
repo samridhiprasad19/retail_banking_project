@@ -1,0 +1,39 @@
+
+    {% extends "layout.html" %}
+   
+    {% block content %}
+    <h2 >Create Account</h2>
+
+    <div class="container">
+        <form name="CreateAccount" action="#" method="post" >
+        <div>
+            <label for="CustomerId"><b>Customer Id :</b></label>
+            <input type="text" placeholder="Enter CustomerId" name="CustomerId"  required>
+            <br class ="clear">
+            <br>
+        </div>
+
+        <div>   
+            <label for="AccountType"><b>Account Type:</b></label>
+            <select id="AccountType" name="Account" required>
+             
+                <option value="SavingAccount">Saving Account</option>
+                <option value="CurrentAccount">Current Account</option>
+                
+            </select>
+            <br>
+            <br>
+        </div>     
+              
+        <div>  
+            <label for="DepositAmount"><b>Deposit Amount :</b></label>
+            <input type="text" placeholder="Enter Amount" name="DepositAmount"  id="DepositAmount" required>
+            <br class="clear">
+            <br>
+            <br>
+        </div>     
+
+            <input class="btn-submit" type="submit" name="submit">
+        </form>
+    </div>
+    {% endblock %}

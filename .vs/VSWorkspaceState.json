@@ -4,13 +4,9 @@
     "\\application",
     "\\application\\static",
     "\\application\\static\\css",
-    "\\application\\static\\images",
     "\\application\\templates",
-    "\\application\\templates\\includes",
-    "\\application\\__pycache__",
-    "\\venv",
     "\\__pycache__"
   ],
-  "SelectedNode": "\\application\\forms.py",
+  "SelectedNode": "\\application\\templates\\layout.html",
   "PreviewInSolutionExplorer": false
 }

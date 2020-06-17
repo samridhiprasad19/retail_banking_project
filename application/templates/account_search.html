@@ -1,12 +1,11 @@
     {% extends "layout.html" %}
    
     {% block content %}
-    <h6 style = "text-align:right;font-family:Times New Roman">Either one of the details should be entered</h6>
-    <h1><center>{{title}}</center></h1>
+    
+    <h1><center>{{title}}</center></h1><br><br>
 
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h3></h3>
+   
+            
             <form name="account_search" action ="" method="post">
                 {{ form.csrf_token }}
 
@@ -19,6 +18,6 @@
                 
       
             </form>
-        </div>
-    </div>
+            
+        
  {% endblock %}

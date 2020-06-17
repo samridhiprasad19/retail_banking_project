@@ -1,6 +1,6 @@
 from application import app, db
 from flask import render_template, request, json, Response, redirect, flash, url_for, session
-from application.models import User, Course, Enrollment
+from application.models import User,Account
 from application.forms import LoginForm, RegisterForm,CustomerSearch,AccountSearch
 
 
@@ -71,10 +71,11 @@ def customer_search():
 
     form = CustomerSearch()
     return render_template("customer_search.html",form = form,title = "Search Customer ")
-@app.route('/delete_account')
+@app.route('/delete_account',methods=['GET','POST'])
 def delete_account():
     if not session.get('username'):
         return redirect(url_for('login'))
+    
     return render_template("delete_account.html")
 @app.route('/deposit_money')
 def deposit_money():
@@ -101,25 +102,70 @@ def accountstatement():
     if not session.get('username'):
         return redirect(url_for('login'))
     return render_template("accountstatement.html")
+
+
 @app.route('/updatecustomer')
 def updatecustomer():
-    if not session.get('username'):
-        return redirect(url_for('login'))
-    return render_template("updatecustomer.html")
-@app.route('/delete_customer')
+    
+    try:
+        if not session.get('username'):
+            return redirect(url_for('login'))
+
+        user = User.objects.all()
+        print("user>>>>>>>>>>>>>>", user)
+        return render_template("updatecustomer.html", user=user)
+    except Exception as ex:
+        print(ex)  
+@app.route('/delete_customer',methods=['POST','GET'])
 def delete_customer():
     if not session.get('username'):
         return redirect(url_for('login'))
+    if request.method == "POST":
+
+            id = request.form['customerid']
+            if User.objects(customer_ssn_id=id).delete():
+            flash("User Deleted successfully","success")
+            else:
+            flash("No such User Exit!!","danger")
+
+    
     return render_template("delete_customer.html")
+@app.route('/create_account',methods=['POST','GET'])
+def create_account():
+
+        if not session.get('username'):
+          return redirect(url_for('login'))
+        if request.method == "POST":
+    
+            customer_id = request.form["CustomerId"]
+            account_type    = request.form["Account"]
+            deposit_amount  = request.form["DepositAmount"]
+            account = Account(customer_ssn_id=customer_id, account_type=account_type, deposit_amount= deposit_amount)
+            account.save()
+            flash("You are successfully registered!","success")
+        return render_template("acccountcreate.html")
+        
+@app.route('/editcustomer', methods=['GET','POST'])
+def editcustomer():
+    try:
+        customer_ssn_id = request.args.get('customer_ssn_id')
+        edituser = User.objects(customer_ssn_id = customer_ssn_id)
+        return render_template('EditCustomer.html', edituser=edituser)
+    except Exception as ex:
+        print(ex)
+
+
+@app.route('/updatecust', methods=['POST'])
+def updatecust():
+    id = request.form['customer_ssn_id']
+
+    User.objects(customer_ssn_id=id).update(set__customer_Address = request.form['customer_Address'], set__customer_name=request.form['customer_name'], set__customer_age=request.form['customer_age'])
+    
+    return render_template('index.html')
 
 
 
 
 
 
-@app.route("/user")
-def user():
-     #User(user_id=1, first_name="Christian", last_name="Hur", email="christian@uta.com", password="abc1234").save()
-     #User(user_id=2, first_name="Mary", last_name="Jane", email="mary.jane@uta.com", password="password123").save()
-     users = User.objects.all()
-     return render_template("user.html", users=users)
+      

@@ -10,7 +10,7 @@ class LoginForm(FlaskForm):
 
 class RegisterForm(FlaskForm):
 	customer_ssn_id = StringField("Customer SSN ID",validators=[DataRequired()]) 
-	password = StringField("Password",validators=[DataRequired()])
+	password = PasswordField("Password",validators=[DataRequired()])
 	customer_name = StringField("Customer Name",validators=[DataRequired()])
 	customer_Address = StringField("Address",validators=[DataRequired()])
 	customer_age = StringField("Age",validators=[DataRequired()])

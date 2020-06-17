@@ -1,4 +1,4 @@
-* {
+/*** {
     box-sizing: border-box;
 }
 
@@ -7,13 +7,7 @@
     box-sizing: border-box;
 }
 
-html,
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    height: 100%;
-    position: absolute;
-    margin:0px;
-}
+
 
 header {
     text-align: center;
@@ -23,7 +17,7 @@ li {
     display: inline;
     padding: 5px;
 }
-
+**/
 a {
     text-decoration: none;
     color: blue;
@@ -31,19 +25,12 @@ a {
 
 a:hover { color : red;}
 
-hr {
-    width: 100%;
-    height:4px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: darkblue;
-    border: 0 none;
-}
+/**
 
 input[type=text], input[type=password] {
     width: 50%;
     padding: 7px;
-    /* margin: 5px 0 22px 0; */
+    
     display: inline-block;
     border: none;
     background: #f1f1f1;
@@ -63,7 +50,6 @@ input[type=text]:focus, input[type=password]:focus {
     background: #333;
     padding:5px;
     border-top:2px solid #0f0f0f;
-    /* position:absolute; */
     bottom:0;
 }
 
@@ -75,7 +61,6 @@ input[type=text]:focus, input[type=password]:focus {
 }
 .footer {
     position:relative
-    text-align: center;
     height: 50px;
     color: white;
     padding: 5px;
@@ -107,4 +92,25 @@ input[type=text]:focus, input[type=password]:focus {
     font-size: 25px;
     right: 10em;
     top: 2em;
+}**/
+
+.global-parent-div {
+    position: relative;
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0px;
+    margin-left: 0px;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: -webkit-fill-available;
+    height: fit-content;
+}
+.footer {
+    
+    position: relative;
+    bottom: 0px;
+    width: 100%;
 }
