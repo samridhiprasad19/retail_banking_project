@@ -19,7 +19,7 @@ input[type=submit] {
   text-align: center;
   background-color: #f1f1f1;
   left-margin: 400px;
-    border-radius: 5px;
+  border-radius: 5px;
   padding: 20px;
 }
 * {
@@ -75,7 +75,6 @@ input[type=submit]:hover {
 }
 .cls{
   position : relative;
-  left:-62px;
 }
 /* Clear floats after the columns */
 .row:after {
@@ -91,4 +90,3 @@ input[type=submit]:hover {
     margin-top: 0;
   }
 }
-

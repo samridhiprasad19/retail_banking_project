@@ -1,10 +1,18 @@
     {% extends "layout.html" %}
    
     {% block content %}
-            <h1><center>{{title}}</center></h1>
-            
-            <div style = "height:fit-content;">
-            <h1><center>{{title}}</center></h1>
+     <h1><center>{{title}}</center></h1>
+            <div style = "position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0px;
+    margin-left: 0px;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: -webkit-fill-available;">
+             
             <form name="login" action ="" method="post">
                 {{ form.csrf_token }}
 

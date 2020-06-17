@@ -5,8 +5,9 @@
     "\\application\\static",
     "\\application\\static\\css",
     "\\application\\templates",
+    "\\application\\templates\\includes",
     "\\__pycache__"
   ],
-  "SelectedNode": "\\application\\templates\\layout.html",
+  "SelectedNode": "\\application\\routes.py",
   "PreviewInSolutionExplorer": false
 }

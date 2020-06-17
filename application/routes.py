@@ -63,14 +63,21 @@ def register():
     return render_template("register.html", title="Register", form=form, register=True)
 
 
-@app.route('/customer_search')
+@app.route('/customer_search',methods=['POST','GET'])
 def customer_search():
-    
-    if not session.get('username'):
-        return redirect(url_for('login'))
-
-    form = CustomerSearch()
-    return render_template("customer_search.html",form = form,title = "Search Customer ")
+        if not session.get('username'):
+            return redirect(url_for('login'))
+        form = CustomerSearch()
+        if form.validate_on_submit():
+            customer_ssn_id = form.customer_id.data
+            viewCustomer = User.objects(customer_ssn_id = customer_ssn_id)
+            if viewCustomer:
+                flash("Redirecting to customer details","success")
+                return render_template('customer_data_view.html',viewCustomer=viewCustomer)
+            else:
+                flash("Oops!!No such customer exist!","danger")
+                return redirect(url_for('index'))
+        return render_template('customer_search.html', form = form,title = "Search Customer ")
 @app.route('/delete_account',methods=['GET','POST'])
 def delete_account():
     if not session.get('username'):
@@ -112,7 +119,6 @@ def updatecustomer():
             return redirect(url_for('login'))
 
         user = User.objects.all()
-        print("user>>>>>>>>>>>>>>", user)
         return render_template("updatecustomer.html", user=user)
     except Exception as ex:
         print(ex)  
@@ -122,13 +128,13 @@ def delete_customer():
         return redirect(url_for('login'))
     if request.method == "POST":
 
-            id = request.form['customerid']
-            if User.objects(customer_ssn_id=id).delete():
+       id = request.form['customerid']
+       if User.objects(customer_ssn_id=id).delete():
             flash("User Deleted successfully","success")
-            else:
-            flash("No such User Exit!!","danger")
-
-    
+            return redirect (url_for('index'))
+       else:
+            flash("Oops!No such user exist!!","danger")
+            return redirect(url_for('index'))
     return render_template("delete_customer.html")
 @app.route('/create_account',methods=['POST','GET'])
 def create_account():
@@ -138,11 +144,19 @@ def create_account():
         if request.method == "POST":
     
             customer_id = request.form["CustomerId"]
+            account_id = request.form['AccountId']
             account_type    = request.form["Account"]
             deposit_amount  = request.form["DepositAmount"]
-            account = Account(customer_ssn_id=customer_id, account_type=account_type, deposit_amount= deposit_amount)
-            account.save()
-            flash("You are successfully registered!","success")
+            temp = User.objects(customer_ssn_id=customer_id)
+            if temp:
+                account = Account(account_id=account_id,customer_ssn_id=customer_id, account_type=account_type, deposit_amount= deposit_amount)
+                account.save()
+                flash("You are successfully registered!","success")
+                return redirect(url_for('index'))
+            else:
+                flash("Oops!!No such customer exist!!Register first","danger")
+                return redirect(url_for('register'))
+                
         return render_template("acccountcreate.html")
         
 @app.route('/editcustomer', methods=['GET','POST'])

@@ -1,6 +1,7 @@
 import flask
 from application import db
 from werkzeug.security import generate_password_hash, check_password_hash
+import datetime
 
 class User(db.Document):
     customer_ssn_id     =   db.IntField(unique=True )
@@ -19,6 +20,9 @@ class User(db.Document):
 
 
 class Account(db.Document):
-    customer_ssn_id = db.IntField(unique=True)
+    account_id=db.IntField(unique=True)
+    customer_ssn_id = db.IntField()
     account_type = db.StringField()
     deposit_amount= db.IntField()
+    transaction_date=db.DateTimeField(default=datetime.datetime.now)
+  

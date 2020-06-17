@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../static/css/withdraw_amount.css">
+    
 </head>
 <body>
 {% include "includes/nav.html" %}
+
 <h3 align="center">Withdraw Amount</h3>
 
 
-<div class="container">
-  <form action="/action_page.php">
+<div class="container" style ="position:relative">
+  <form action="#">
     <div class="row">
       <div class="col-25 ">
             <label for="cust_id">Customer Id:</label>
       </div>
       <div class="col-75 cls">
-      <br>
         <input type="number" name = "cust_id" id="cust_id" required/>
       </div>
     </div>
@@ -65,6 +65,9 @@
       <input type="submit" value="Submit">
     </div>
   </form>
+</div>
+<div style="position: relative;bottom: 0px;width: 100%;">
+{% include "includes/footer.html" %}
 </div>
 
 </body>

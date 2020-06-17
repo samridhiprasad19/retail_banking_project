@@ -10,8 +10,8 @@
 
 </head>
   <body>
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-      <a class="navbar-brand" href="{{url_for('index')}}">ABC BANK</a>
+    <nav class="navbar navbar-light" style="background-color: yellow;">
+      <a class="navbar-brand" href="{{url_for('index')}}"><b>ABC BANK</b></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,12 +20,12 @@
 
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{url_for('index')}}"><b>Home </b><span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Customer Management
+              <b>  Customer Management</b>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="{{url_for('register')}}">Create Customer</a>
@@ -37,19 +37,19 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Account Management
+              <b>  Account Management</b>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="{{url_for('create_account')}}">Create Account</a>
                 <a class="dropdown-item" href="{{url_for('delete_account')}}">Delete Account</a>
                 <a class="dropdown-item" href="{{url_for('account_status')}}">Account Status</a>
                 <a class="dropdown-item" href="{{url_for('accountstatement')}}">View Statement</a>
-                <a class="dropdown-item" href="{{url_for('account_search')}}">Account Search<</a>
+                <a class="dropdown-item" href="{{url_for('account_search')}}">Account Search</a>
               </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Transaction
+               <b> Transaction</b>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="{{url_for('deposit_money')}}">Deposit Money</a>
@@ -59,7 +59,7 @@
               </div>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="{{url_for('logout')}}">Logout<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{url_for('logout')}}"><b>Logout</b><span class="sr-only">(current)</span></a>
             </li>
           </ul>
 

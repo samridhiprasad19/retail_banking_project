@@ -1,15 +1,19 @@
 {% extends "layout.html" %}
 
 {% block content %}
+            <div class = "global-parent-div">
    
-            <h1>Welcome to Abc Bank .</h1>
+            <h1><b><u>Welcome to Abc Bank</b></u></h1>
             <br><br>
             {% if session['username'] %}
                 <br><br><h3>Let's get started.</h3>
             {% else %}
                <br><br> <p>Already registered? <a href="{{url_for('login') }}">Login</a></p>
             {% endif %}
-
+            </div>
             
         
 {% endblock %}
+
+
+

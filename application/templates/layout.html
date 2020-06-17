@@ -9,21 +9,7 @@
 <body>
 
 {% include "includes/nav.html" %}
-   
-    <div style=" position: relative;
-    background-color: orange;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 0px;
-    margin-left: 0px;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    width: -webkit-fill-available;
-    height: 100vh">
-
-    {% with messages = get_flashed_messages(with_categories=true) %}
+   {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
                 <div class="alert alert-{{category}}">
@@ -37,10 +23,8 @@
 
 
     {% endblock %}
-    </div>
-    
-    {% include "includes/footer.html" %}
-
-
+<div style="position: relative;bottom: 0px;width: 100%;">
+{% include "includes/footer.html" %}
+</div>
 </body>
 </html>

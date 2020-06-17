@@ -1,0 +1,45 @@
+ {% extends "layout.html" %}
+   
+    {% block content %}
+    
+
+            <div id="Show-data">
+            <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Customer SSN ID</th>
+                      <th scope="col">Customer Name</th>
+                      <th scope="col">Customer Address</th>
+                      <th scope="col">Customer Age</th>
+                      <th scope="col">Customer State</th>
+                      <th scope="col">Customer City</th>
+                    </tr>
+                  </thead>
+                  {% for row in viewCustomer %}
+                  <tbody>
+                    <tr>
+                      <th scope="row">{{ row['customer_ssn_id'] }}</th>
+                      <td>{{ row['customer_name'] }}</td>
+                      <td>{{ row['customer_Address'] }}</td>
+                      <td>{{ row['customer_age'] }}</td>
+                      <td>{{ row['customer_state'] }}</td>
+                      <td>{{ row['customer_city'] }}</td>
+                    </tr>
+                  </tbody>
+                  {% endfor %}
+            </table>
+            </div>  
+
+<script type="text/javascript">
+$(function() {
+    $('button[name="submit"]').on('click', function() {
+        if ($(this).val() == 'submit') {
+            $('#Show-data').show();
+        } else {
+            $('#Show-data').hide();
+        }
+    });
+});
+ </script>                    
+       
+ {% endblock %}
